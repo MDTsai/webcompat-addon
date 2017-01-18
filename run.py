@@ -133,6 +133,8 @@ if __name__ == '__main__':
             backup_files.sort()
             for old_file in backup_files[:-3]:
                 os.remove(app.config['BACKUP_DEFAULT_DEST'] + old_file)
+        else:
+            print ('There is nothing to backup to ' + app.config['BACKUP_DEFAULT_DEST'])
     else:
         if check_pip_deps():
             app.run(host='localhost')
